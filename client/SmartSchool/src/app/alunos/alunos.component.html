@@ -1,14 +1,10 @@
 <h1>
-    alunos works!
+    {{titulo}}
 </h1>
 
 <ul>
-    <li>Marta</li>
-    <li>Paulo</li>
-    <li>Tiago</li>
-    <li>Diogo</li>
-    <li>Maath</li>
-    <li>Pedro</li>
-    <li>Luiza</li>
-    <li>Laura</li>
+    <li *ngFor="let aluno of alunos">
+        {{aluno.nome}}
+    </li>
+
 </ul>
