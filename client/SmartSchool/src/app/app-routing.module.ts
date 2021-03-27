@@ -6,6 +6,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import {ProfessoresComponent} from './professores/professores.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   { path: 'professores', component: ProfessoresComponent },
   { path: 'alunos', component: AlunosComponent },
   { path: 'perfil', component: PerfilComponent },

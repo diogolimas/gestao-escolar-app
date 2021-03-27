@@ -7,16 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlunosComponent implements OnInit {
 
-  titulo = 'alunos'
+  public titulo = 'alunos'
   public alunos = [
-    {'nome': 'Marta'},
-    {'nome':'Paulo'},
-    {'nome':'Tiago'},
-    {'nome':'Diogo'},
-    {'nome':'Maath'},
-    {'nome':'Pedro'},
-    {'nome':'Luiza'},
-    {'nome':'Laura'},
+    {'id': 1, 'nome': 'Marta', 'sobrenome': '', 'telefone': 1414214214},
+    {'id': 2, 'nome':'Paulo', 'sobrenome': '', 'telefone': 1414214214},
+    {'id': 3, 'nome':'Tiago', 'sobrenome': '', 'telefone': 1414214214},
+    {'id': 4, 'nome':'Diogo', 'sobrenome': '', 'telefone': 1414214214},
+    {'id': 5, 'nome':'Maath', 'sobrenome': '', 'telefone': 1414214214},
+    {'id': 6, 'nome':'Pedro', 'sobrenome': '', 'telefone': 1414214214},
+    {'id': 7, 'nome':'Luiza', 'sobrenome': '', 'telefone': 1414214214},
+    {'id': 8, 'nome':'Laura', 'sobrenome': '', 'telefone': 1414214214},
   ]
   constructor() { }
 
