@@ -1,7 +1,7 @@
 <div *ngIf="(professorSelecionado | json) != ({} | json)">
 
     <div class="row mt-1">
-        <div class=" mr-auto"><app-titulo [titulo]="'Professor: ' + professorSelecionado.nome"></app-titulo>
+        <div class=" mr-auto"><app-titulo [titulo]="'Professor: ' + professorSelecionado.id"></app-titulo>
         </div>
         <div class="">   <button class="btn btn-warning" (click)="voltar()">
             Lista de professores
@@ -11,12 +11,12 @@
  
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" 
+        <input type="text" class="form-control" id="exampleFormControlInput1" value="{{professorSelecionado.nome}}"
         >
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput2" class="form-label">Disciplina</label>
-        <input type="text" class="form-control" id="exampleFormControlInput2" 
+        <input type="text" class="form-control" id="exampleFormControlInput2" value="{{professorSelecionado.disciplina}}"
         >
       </div>
 

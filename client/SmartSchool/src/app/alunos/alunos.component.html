@@ -1,33 +1,50 @@
+<div class="row">
 
-<div *ngIf="alunoSelecionado">
+  <div>
+  <!---  <input type="text" name="" id="" [(ngModel)]="textSimple">
+    <p>
+      {{textSimple}}
+    </p>
+-->  
+</div>
+
+  <div class="col-sm-6" *ngIf="(alunoSelecionado | json) != ({} | json)">
     <div class="row mt-1">
-        <div class=" mr-auto"><app-titulo [titulo]="'Aluno: ' + alunoSelecionado.nome"></app-titulo>
+        <div class=" mr-auto">
+          <app-titulo [titulo]="'Código aluno: ' + alunoSelecionado.id"></app-titulo> 
         </div>
-        <div class="">   <button class="btn btn-warning" (click)="voltar()">
-            Lista de estudantes
+        <div class="">   <button class="btn btn-outline-danger" (click)="voltar()">
+            fechar
         </button></div>
     </div>
     <br>
- 
+    <form >
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" 
+        <input type="text" class="form-control" id="exampleFormControlInput1" value="{{alunoSelecionado.nome}}"
         >
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput2" class="form-label">Sobrenome</label>
-        <input type="text" class="form-control" id="exampleFormControlInput2" 
+        <input type="text" class="form-control" id="exampleFormControlInput2" value="{{alunoSelecionado.sobrenome}}"
         >
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput3" class="form-label">Telefone</label>
-        <input type="text" class="form-control" id="exampleFormControlInput3" 
+        <input type="text" class="form-control" id="exampleFormControlInput3" value="{{alunoSelecionado.telefone}}"
         >
       </div>
-
+      <div class="form-group">
+        <button class="btn btn-success">
+          Salvar
+        </button>
+      </div>
+    </form>
 </div>
-<div *ngIf="!alunoSelecionado">
-    <div class=" mr-auto"><app-titulo [titulo]="titulo"></app-titulo>
+<div [ngClass]="{'col-sm-12': (alunoSelecionado | json) == ({} | json), 'col-sm-6': (alunoSelecionado | json) != ({} | json)}"  >
+
+    <div class=" mr-auto">
+      <app-titulo [titulo]="titulo"></app-titulo>
 
     <table class="table table-striped table-hover">
         <thead>
@@ -47,4 +64,7 @@
           
         </tbody>
       </table>
+</div>
+
+
 </div>

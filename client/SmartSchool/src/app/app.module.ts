@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,7 @@ import { TituloComponent } from './titulo/titulo.component';
 
 import { BrowserAnimationsModule } from  '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     DashboardComponent,
     NavComponent,
     TituloComponent,
+  //  FormsModule,
+   
    
   ],
   imports: [
@@ -30,6 +33,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     BrowserAnimationsModule,
     BsDropdownModule.forRoot()
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })

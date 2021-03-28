@@ -20,7 +20,7 @@ export class ProfessoresComponent implements OnInit {
   professorSelect(professor: Professor)
   {
     this.professorSelecionado = professor;
-    console.log(this.professorSelecionado)
+    
   }
 
   voltar()
