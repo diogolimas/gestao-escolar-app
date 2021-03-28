@@ -1,6 +1,29 @@
+<div *ngIf="(professorSelecionado | json) != ({} | json)">
 
-<app-titulo [titulo]="titulo"></app-titulo>
+    <div class="row mt-1">
+        <div class=" mr-auto"><app-titulo [titulo]="'Professor: ' + professorSelecionado.nome"></app-titulo>
+        </div>
+        <div class="">   <button class="btn btn-warning" (click)="voltar()">
+            Lista de professores
+        </button></div>
+    </div>
+    <br>
+ 
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" 
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">Disciplina</label>
+        <input type="text" class="form-control" id="exampleFormControlInput2" 
+        >
+      </div>
 
+
+</div>
+<div *ngIf="(professorSelecionado | json) == ({} | json)">
+    <div class=" mr-auto"><app-titulo [titulo]="titulo"></app-titulo>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -11,7 +34,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let prof of professores">
+      <tr *ngFor="let prof of professores" (click)="professorSelect(prof)">
         <th scope="row">{{prof.id}}</th>
         <td>{{prof.nome}}</td>
         <td>{{prof.disciplina}}</td>
@@ -19,3 +42,4 @@
       
     </tbody>
   </table>
+</div>

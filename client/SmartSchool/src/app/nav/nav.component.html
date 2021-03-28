@@ -16,10 +16,7 @@
             <li class="nav-item">
               <a routerLink="alunos" routerLinkActive="active"  class="nav-link">Alunos</a>
             </li>
-            <li class="nav-item dropdown">
-              <a routerLink="perfil" routerLinkActive="active"  class="nav-link">Perfil</a>
-               
-            </li>
+
           </ul>
             <ul class="navbar-nav" dropdown>
                 <li class="nav-item dropdown">
@@ -34,16 +31,14 @@
                       data-toggle="dropdown"
                       aria-expanded="false"
                       aria-controls="dropdown-basic">
-                        Button dropdown <span class="caret"></span>
+                        Diogo da Silva Lima <span class="caret"></span>
                       </a>
                       <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                           role="menu" aria-labelledby="button-basic">
-                        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li class="divider dropdown-divider"></li>
-                        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                        <li role="menuitem"><a routerLink="perfil" routerLinkActive="active" class="dropdown-item" >Perfil</a>
                         </li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Sair</a>
+                   
                       </ul>
                     </div>
                 </li>

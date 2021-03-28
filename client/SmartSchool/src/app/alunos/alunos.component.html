@@ -1,21 +1,50 @@
 
-<app-titulo [titulo]="titulo"></app-titulo>
+<div *ngIf="alunoSelecionado">
+    <div class="row mt-1">
+        <div class=" mr-auto"><app-titulo [titulo]="'Aluno: ' + alunoSelecionado.nome"></app-titulo>
+        </div>
+        <div class="">   <button class="btn btn-warning" (click)="voltar()">
+            Lista de estudantes
+        </button></div>
+    </div>
+    <br>
+ 
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" 
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" id="exampleFormControlInput2" 
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">Telefone</label>
+        <input type="text" class="form-control" id="exampleFormControlInput3" 
+        >
+      </div>
 
-<table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Telefone</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let aluno of alunos">
-        <th scope="row">{{aluno.id}}</th>   
-        <td>{{aluno.nome}}</td>
-        <td>{{aluno.telefone}}</td>
-      </tr>
-      
-    </tbody>
-  </table>
+</div>
+<div *ngIf="!alunoSelecionado">
+    <div class=" mr-auto"><app-titulo [titulo]="titulo"></app-titulo>
+
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let aluno of alunos" (click)="alunoSelect(aluno)">
+            <th scope="row">{{aluno.id}}</th>   
+            <td>{{aluno.nome}}</td>
+            <td>{{aluno.telefone}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
