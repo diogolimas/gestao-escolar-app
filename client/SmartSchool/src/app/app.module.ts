@@ -12,7 +12,7 @@ import { TituloComponent } from './titulo/titulo.component';
 
 import { BrowserAnimationsModule } from  '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,9 +31,22 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
+  exports: 
+  [     
+    AppComponent,
+    AlunosComponent,
+    ProfessoresComponent,
+    PerfilComponent,
+    DashboardComponent,
+    NavComponent,
+    TituloComponent,
+  //  FormsModule,
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })

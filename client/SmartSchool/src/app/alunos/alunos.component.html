@@ -1,12 +1,6 @@
 <div class="row">
 
-  <div>
-  <!---  <input type="text" name="" id="" [(ngModel)]="textSimple">
-    <p>
-      {{textSimple}}
-    </p>
--->  
-</div>
+
 
   <div class="col-sm-6" *ngIf="(alunoSelecionado | json) != ({} | json)">
     <div class="row mt-1">
@@ -18,24 +12,24 @@
         </button></div>
     </div>
     <br>
-    <form >
+    <form [formGroup]="alunoForm"  (submit)="alunoSubmit()">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" value="{{alunoSelecionado.nome}}"
+        <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="nome"
         >
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput2" class="form-label">Sobrenome</label>
-        <input type="text" class="form-control" id="exampleFormControlInput2" value="{{alunoSelecionado.sobrenome}}"
+        <input type="text" class="form-control" id="exampleFormControlInput2" formControlName="sobrenome"
         >
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput3" class="form-label">Telefone</label>
-        <input type="text" class="form-control" id="exampleFormControlInput3" value="{{alunoSelecionado.telefone}}"
+        <input type="text" class="form-control" id="exampleFormControlInput3" formControlName="telefone"
         >
       </div>
       <div class="form-group">
-        <button class="btn btn-success">
+        <button class="btn btn-success" [disabled]="!alunoForm.valid">
           Salvar
         </button>
       </div>
@@ -50,16 +44,30 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Visualizar</th>
             <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
             <th scope="col">Telefone</th>
+            <th scope="col">Opções</th>
             
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let aluno of alunos" (click)="alunoSelect(aluno)">
-            <th scope="row">{{aluno.id}}</th>   
+            
+            <th scope="row">{{aluno.id}}</th>  
+            <th><button class="btn  btn-sm btn-outline-warning"  (click)="alunoSelect(aluno)">detalhe</button></th> 
             <td>{{aluno.nome}}</td>
+            <td>{{aluno.sobrenome}}</td>
             <td>{{aluno.telefone}}</td>
+            <td>
+              <div class="btn-group">
+                
+              <button class="btn  btn-sm btn-outline-primary">Professores</button>
+              <button class="btn  btn-sm btn-outline-danger">Desativar</button>
+
+            </div>
+            </td>
           </tr>
           
         </tbody>

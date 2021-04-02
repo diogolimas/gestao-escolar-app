@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Aluno } from '../models/Aluno';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
+
 
 
 @Component({
@@ -9,9 +12,11 @@ import { Aluno } from '../models/Aluno';
 })
 export class AlunosComponent implements OnInit {
 
+
+  public alunoForm!: FormGroup;
   public titulo = 'Alunos';
   public alunoSelecionado: Aluno = {} as Aluno; 
-  public textSimple!: string;
+  public textSimple: string = "testando two way databinding";
 
   public alunos = [
     {'id': 1, 'nome': 'Marta', 'sobrenome': 'De Oliveira', 'telefone': 1414214214},
@@ -23,11 +28,32 @@ export class AlunosComponent implements OnInit {
     {'id': 7, 'nome':'Luiza', 'sobrenome': 'De Almeida', 'telefone': 1414214214},
     {'id': 8, 'nome':'Laura', 'sobrenome': 'Dur Garçon', 'telefone': 1414214214},
   ];
+  constructor(private fb: FormBuilder) { 
+    this.criarForm();
 
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  criarForm(){
+    this.alunoForm = this.fb.group({
+      nome: ['', Validators.required],
+      sobrenome: ['', Validators.required],
+      telefone: ['', Validators.required]
+    });
+    }
+
+
+    alunoSubmit() {
+     console.log(this.alunoForm.value);
+    }
+   
   alunoSelect(aluno: Aluno)
   {
     this.alunoSelecionado = aluno;
-    
+    this.alunoForm.patchValue(aluno);
   }
 
   voltar()
@@ -35,11 +61,6 @@ export class AlunosComponent implements OnInit {
     this.alunoSelecionado = {} as Aluno; 
   }
 
-
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log(this.alunoSelecionado)
-  }
+ 
 
 }
