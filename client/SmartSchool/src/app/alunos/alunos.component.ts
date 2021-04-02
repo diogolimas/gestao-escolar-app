@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,TemplateRef } from '@angular/core';
 import { Aluno } from '../models/Aluno';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 
 
@@ -17,6 +18,7 @@ export class AlunosComponent implements OnInit {
   public titulo = 'Alunos';
   public alunoSelecionado: Aluno = {} as Aluno; 
   public textSimple: string = "testando two way databinding";
+  public modalRef!: BsModalRef;
 
   public alunos = [
     {'id': 1, 'nome': 'Marta', 'sobrenome': 'De Oliveira', 'telefone': 1414214214},
@@ -28,7 +30,11 @@ export class AlunosComponent implements OnInit {
     {'id': 7, 'nome':'Luiza', 'sobrenome': 'De Almeida', 'telefone': 1414214214},
     {'id': 8, 'nome':'Laura', 'sobrenome': 'Dur Garçon', 'telefone': 1414214214},
   ];
-  constructor(private fb: FormBuilder) { 
+
+ 
+  constructor(
+        private fb: FormBuilder, 
+        private modalService: BsModalService) { 
     this.criarForm();
 
   }
@@ -36,6 +42,11 @@ export class AlunosComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+  
 
   criarForm(){
     this.alunoForm = this.fb.group({
