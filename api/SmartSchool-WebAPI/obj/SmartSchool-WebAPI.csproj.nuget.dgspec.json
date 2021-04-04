@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Diogo\\Documents\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\SmartSchool-WebAPI.csproj": {}
+    "C:\\Users\\Diogo\\OneDrive\\Documentos\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\SmartSchool-WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Diogo\\Documents\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\SmartSchool-WebAPI.csproj": {
+    "C:\\Users\\Diogo\\OneDrive\\Documentos\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\SmartSchool-WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diogo\\Documents\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\SmartSchool-WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Diogo\\OneDrive\\Documentos\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\SmartSchool-WebAPI.csproj",
         "projectName": "SmartSchool-WebAPI",
-        "projectPath": "C:\\Users\\Diogo\\Documents\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\SmartSchool-WebAPI.csproj",
+        "projectPath": "C:\\Users\\Diogo\\OneDrive\\Documentos\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\SmartSchool-WebAPI.csproj",
         "packagesPath": "C:\\Users\\Diogo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diogo\\Documents\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\Diogo\\OneDrive\\Documentos\\dev\\studies\\gestao-escolar-app\\api\\SmartSchool-WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.2, )"

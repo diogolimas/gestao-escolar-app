@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SmartSchool-WebAPI", ".", "{EDCB27F7-6AD2-4570-9447-B23B439681FF}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56124"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\OneDrive\Documentos\dev\studies\gestao-escolar-app\api\SmartSchool-WebAPI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56124\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56124"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\OneDrive\Documentos\dev\studies\gestao-escolar-app\api\SmartSchool-WebAPI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56124\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56124"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDCB27F7-6AD2-4570-9447-B23B439681FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDCB27F7-6AD2-4570-9447-B23B439681FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B7BCF4E-FE91-4CC1-AB52-0AF57E51034E}
+	EndGlobalSection
+EndGlobal
